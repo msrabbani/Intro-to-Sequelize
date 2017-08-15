@@ -81,6 +81,20 @@ router.post('/student_add', function(req, res){
     })
   })
 
+  router.post('/:id/addsubject',(req,res)=>{
+      students.StudentSubject.create({
+          StudentId:req.params.id,
+          SubjectId:req.body.dropdown
+      },{
+          where:{
+              id:req.params.id
+          }
+      }).then(()=> res.redirect('/students'))
+  .catch(err=>{
+      console.log(err);
+  })
+  })
+
 // yang belum : validasi pada model Student untuk memeriksa input email. Input email harus
 // a. Berformat yang benar, [user]@[domainname].[domain]
 // b. Email tidak boleh duplikat

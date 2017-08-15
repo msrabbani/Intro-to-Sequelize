@@ -19,5 +19,18 @@ router.get('/', (req,res)=>{
     })
   })
 
+  router.get('/:id/enrolledstudents', function(req, res){
+    subjects.StudentSubject.findAll({
+    where: {
+        SubjectId:req.params.id
+    },
+    include:[{all:true}],
+    order:[['Student', 'firstname', 'ASC']]
+    })
+    .then(data => {
+        res.render('enrolledstudents', {dataSub:data})
+    })
+  })
+
 
   module.exports = router

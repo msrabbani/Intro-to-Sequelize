@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Subjects</title>
+    <title>Students</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
   </head>
@@ -11,23 +11,22 @@
   <body>
     <section class="section">
     <div class="container">
-  <h1 class="title"><strong>Subjects</strong></h1>
+  <h1 class="title"><strong>Students</strong></h1>
     <h2>
+        <form action="/students/<%=dataSub.id%>/enrolledstudents" method="post">
+        <br>
           <table class="table">
           <tr>
-            <th>ID</th>
-            <th>Subjects</th>
-            <th>Teacher</th>
-            <th>Actions</th>
+            <th>Name</th>
+            <th>Score</th>
           </tr>
           <!-- <%var i = 1%> -->
           <%dataSub.forEach(d => {%>
             <tr>
             <!-- <td><%=i%><%i+=1%></td> -->
-            <td><%=d.id%></td>
-            <td><%=d.subject_name%></td>
-            <td></td>
-            <td><a href="<%=d.id%>/enrolledstudents">Endroll Students</a></td>
+            <td><%=d.name%></td>
+            <td><%=d.firstname%></td>
+            <td><a href="/students/<%=d.id%>/addsubject">Give Score</a></td>
           <%})%>
           </tr>
 </table>
