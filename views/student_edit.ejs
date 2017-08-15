@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Student Add</title>
+  </head>
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+  <!-- <link rel="stylesheet" href="/sesuatu.css"> -->
+  <body>
+    <center>
+      <h1>Edit Student</h1>
+
+      <a href="#">show all data</a>
+      <br><br>
+
+        <form action="/students/edit/<%=editS.id%>" method="post">
+
+              <!-- <%JSON.stringify(editS)%> -->
+          First Name :<br>
+          <input type="text" name="firstname" value="<%=editS.firstname%>">
+          <br>
+
+          Last Name :<br>
+          <input type="text" name="lastname" value="<%=editS.lastname%>">
+          <br>
+
+          Email :<br>
+          <input type="text" name="email" value="<%=editS.email%>">
+          <br>
+          <br>
+          <input type="submit" value="Edit Student">
+
+        </form>
+
+<br><br>
+
+<!-- <a href="/"><b>Home</b></a> -->
+
+</center>
+
+  </body>
+</html>
