@@ -11,7 +11,13 @@ router.get('/', (req,res)=>{
     })
   })
 
-
+  router.get('/delete/:id', function(req, res){
+    subjects.Subject.destroy({
+      where:{id:`${req.params.id}`}
+    }).then(() =>{
+      res.redirect('/subjects')
+    })
+  })
 
 
   module.exports = router

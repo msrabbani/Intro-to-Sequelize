@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     firstname: DataTypes.STRING,
     lastname: DataTypes.STRING,
     email: {type: DataTypes.STRING,
-        validate:{ 
+        validate:{
         isEmail:{
              msg:"format email salah!"
          }
@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+         Student.belongsToMany(Subject, {through:'StudentSubjects'})
       }
     }
   });

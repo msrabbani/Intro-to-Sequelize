@@ -13,12 +13,14 @@
     <div class="container">
   <h1 class="title"><strong>Teachers</strong></h1>
     <h2>
+        <a href="/teachers/teacher_add">Add Teacher</a><br><br>
           <table class="table">
           <tr>
             <th>ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
+            <th>Subject</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -30,6 +32,7 @@
             <td><%=d.first_name%></td>
             <td><%=d.last_name%></td>
             <td><%=d.email%></td>
+            <td><%=d.SubjectId%></td>
             <td> <a href="/teachers/edit/<%=d.id%>">Edit</a> </td>
             <td> <a href="/teachers/delete/<%=d.id%>">Delete</a> </td>
           <%})%>

@@ -70,8 +70,21 @@ router.post('/student_add', function(req, res){
       res.redirect('/students')
     })
   })
+
+  router.get('/:id/addsubject', (req,res)=>{
+      students.Student.findById(req.params.id)
+      .then((x)=>{
+          students.Subject.findAll()
+          .then((y)=>{
+          res.render('addsubject',{dataStud:x, dataSub:y})
+      })
+    })
+  })
+
 // yang belum : validasi pada model Student untuk memeriksa input email. Input email harus
 // a. Berformat yang benar, [user]@[domainname].[domain]
 // b. Email tidak boleh duplikat
 // no 11
+// assosation one to one many to many
+//help, parsial belum
 module.exports = router

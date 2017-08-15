@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Subjects</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
+  </head>
+  <center>
+  <body>
+    <section class="section">
+    <div class="container">
+  <h1 class="title"><strong>Add Subject</strong></h1>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Add Subject To Student</title>
+    </head>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <!-- <link rel="stylesheet" href="/sesuatu.css"> -->
+    <body>
+      <center>
+        <br>
+      <form action="/students/<%=dataStud.id%>/addsubject" method="post">
+
+    Firstname :<br>
+    <input type="text" name="firstname" value="<%=dataStud.firstname%>">
+    <br>
+
+    Lastname :<br>
+    <input type="text" name="lastname" value="<%=dataStud.lastname%>">
+    <br>
+
+    Email :<br>
+    <input type="text" name="email" value="<%=dataStud.email%>">
+    <br>
+
+    Choose Subject:<br>
+        <select name="subject">
+            <%dataSub.forEach(d => {%>
+            <option value="<%d.id%>"><%=d.subject_name%></option>
+            <%})%>
+        </select>
+    <br>
+    <br>
+    <input type="submit" value="Add Subject">
+
+  </form>
+  <br><br>
+  <!-- <a href="/"><b>Home</b></a> -->
+
+  </center>
+
+    </body>
+  </html>
+
+  <a href="/">
+    <span class="icon">
+      <i class="fa fa-home">Home</i>
+    </h2>
+  </div>
+</section>
+  </span>
+  </a>
+  </center>
+  </body>
+</html>
